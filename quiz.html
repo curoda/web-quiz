@@ -12,51 +12,118 @@
         .question {
             margin-bottom: 20px;
         }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
     </style>
 </head>
 <body>
 
 <h2>Revolutionary War Quiz</h2>
 
-<form id="quizForm">
-    <div class="question">
-        <p>1. Who was the main author of the Declaration of Independence?</p>
-        <input type="radio" name="q1" value="a"> Benjamin Franklin<br>
-        <input type="radio" name="q1" value="b"> George Washington<br>
-        <input type="radio" name="q1" value="c"> Thomas Jefferson<br>
-        <input type="radio" name="q1" value="d"> John Adams<br>
-    </div>
+<div class="question">
+    <p>1. Who was the main author of the Declaration of Independence?</p>
+    <input type="radio" name="q1" value="a" onclick="checkAnswer(this, 'q1', 'c')"> Benjamin Franklin<br>
+    <input type="radio" name="q1" value="b" onclick="checkAnswer(this, 'q1', 'c')"> George Washington<br>
+    <input type="radio" name="q1" value="c" onclick="checkAnswer(this, 'q1', 'c')"> Thomas Jefferson<br>
+    <input type="radio" name="q1" value="d" onclick="checkAnswer(this, 'q1', 'c')"> John Adams<br>
+    <span id="result_q1"></span>
+</div>
 
-    <!-- Add more questions similarly... -->
+<div class="question">
+    <p>2. Which battle is considered the turning point of the Revolutionary War?</p>
+    <input type="radio" name="q2" value="a" onclick="checkAnswer(this, 'q2', 'b')"> Battle of Bunker Hill<br>
+    <input type="radio" name="q2" value="b" onclick="checkAnswer(this, 'q2', 'b')"> Battle of Saratoga<br>
+    <input type="radio" name="q2" value="c" onclick="checkAnswer(this, 'q2', 'b')"> Battle of Yorktown<br>
+    <input type="radio" name="q2" value="d" onclick="checkAnswer(this, 'q2', 'b')"> Battle of Lexington and Concord<br>
+    <span id="result_q2"></span>
+</div>
 
-    <div class="question">
-        <p>10. Which battle is considered the turning point of the Revolutionary War?</p>
-        <input type="radio" name="q10" value="a"> Battle of Bunker Hill<br>
-        <input type="radio" name="q10" value="b"> Battle of Saratoga<br>
-        <input type="radio" name="q10" value="c"> Battle of Yorktown<br>
-        <input type="radio" name="q10" value="d"> Battle of Lexington and Concord<br>
-    </div>
+<div class="question">
+    <p>3. Which foreign country provided significant military assistance to the American colonists?</p>
+    <input type="radio" name="q3" value="a" onclick="checkAnswer(this, 'q3', 'c')"> Spain<br>
+    <input type="radio" name="q3" value="b" onclick="checkAnswer(this, 'q3', 'c')"> Germany<br>
+    <input type="radio" name="q3" value="c" onclick="checkAnswer(this, 'q3', 'c')"> France<br>
+    <input type="radio" name="q3" value="d" onclick="checkAnswer(this, 'q3', 'c')"> Russia<br>
+    <span id="result_q3"></span>
+</div>
 
-    <input type="button" value="Submit" onclick="checkAnswers()">
-</form>
+<div class="question">
+    <p>4. Who was the British king during the Revolutionary War?</p>
+    <input type="radio" name="q4" value="a" onclick="checkAnswer(this, 'q4', 'c')"> King George I<br>
+    <input type="radio" name="q4" value="b" onclick="checkAnswer(this, 'q4', 'c')"> King George II<br>
+    <input type="radio" name="q4" value="c" onclick="checkAnswer(this, 'q4', 'c')"> King George III<br>
+    <input type="radio" name="q4" value="d" onclick="checkAnswer(this, 'q4', 'c')"> King Edward IV<br>
+    <span id="result_q4"></span>
+</div>
 
-<p id="result"></p>
+<div class="question">
+    <p>5. Which document officially ended the Revolutionary War?</p>
+    <input type="radio" name="q5" value="a" onclick="checkAnswer(this, 'q5', 'b')"> The Magna Carta<br>
+    <input type="radio" name="q5" value="b" onclick="checkAnswer(this, 'q5', 'b')"> The Paris Peace Treaty<br>
+    <input type="radio" name="q5" value="c" onclick="checkAnswer(this, 'q5', 'b')"> The Treaty of Versailles<br>
+    <input type="radio" name="q5" value="d" onclick="checkAnswer(this, 'q5', 'b')"> The Mayflower Compact<br>
+    <span id="result_q5"></span>
+</div>
+
+<div class="question">
+    <p>6. Who was the commander-in-chief of the Continental Army?</p>
+    <input type="radio" name="q6" value="a" onclick="checkAnswer(this, 'q6', 'd')"> Benjamin Franklin<br>
+    <input type="radio" name="q6" value="b" onclick="checkAnswer(this, 'q6', 'd')"> Thomas Paine<br>
+    <input type="radio" name="q6" value="c" onclick="checkAnswer(this, 'q6', 'd')"> Samuel Adams<br>
+    <input type="radio" name="q6" value="d" onclick="checkAnswer(this, 'q6', 'd')"> George Washington<br>
+    <span id="result_q6"></span>
+</div>
+
+<div class="question">
+    <p>7. Which event is known as the first military engagement of the Revolutionary War?</p>
+    <input type="radio" name="q7" value="a" onclick="checkAnswer(this, 'q7', 'c')"> The Boston Tea Party<br>
+    <input type="radio" name="q7" value="b" onclick="checkAnswer(this, 'q7', 'c')"> The Siege of Yorktown<br>
+    <input type="radio" name="q7" value="c" onclick="checkAnswer(this, 'q7', 'c')"> The Battle of Lexington and Concord<br>
+    <input type="radio" name="q7" value="d" onclick="checkAnswer(this, 'q7', 'c')"> The Boston Massacre<br>
+    <span id="result_q7"></span>
+</div>
+
+<div class="question">
+    <p>8. Which group was responsible for organizing protests against British policies, including the Boston Tea Party?</p>
+    <input type="radio" name="q8" value="a" onclick="checkAnswer(this, 'q8', 'b')"> The Continental Congress<br>
+    <input type="radio" name="q8" value="b" onclick="checkAnswer(this, 'q8', 'b')"> The Sons of Liberty<br>
+    <input type="radio" name="q8" value="c" onclick="checkAnswer(this, 'q8', 'b')"> The Loyalists<br>
+    <input type="radio" name="q8" value="d" onclick="checkAnswer(this, 'q8', 'b')"> The Redcoats<br>
+    <span id="result_q8"></span>
+</div>
+
+<div class="question">
+    <p>9. What was the primary reason the American colonists sought independence from Britain?</p>
+    <input type="radio" name="q9" value="a" onclick="checkAnswer(this, 'q9', 'c')"> Religious freedom<br>
+    <input type="radio" name="q9" value="b" onclick="checkAnswer(this, 'q9', 'c')"> Land disputes<br>
+    <input type="radio" name="q9" value="c" onclick="checkAnswer(this, 'q9', 'c')"> Taxation without representation<br>
+    <input type="radio" name="q9" value="d" onclick="checkAnswer(this, 'q9', 'c')"> Trade restrictions<br>
+    <span id="result_q9"></span>
+</div>
+
+<div class="question">
+    <p>10. Which of the following was NOT one of the original thirteen colonies?</p>
+    <input type="radio" name="q10" value="a" onclick="checkAnswer(this, 'q10', 'a')"> Vermont<br>
+    <input type="radio" name="q10" value="b" onclick="checkAnswer(this, 'q10', 'a')"> Virginia<br>
+    <input type="radio" name="q10" value="c" onclick="checkAnswer(this, 'q10', 'a')"> New York<br>
+    <input type="radio" name="q10" value="d" onclick="checkAnswer(this, 'q10', 'a')"> Georgia<br>
+    <span id="result_q10"></span>
+</div>
 
 <script>
-    function checkAnswers() {
-        let score = 0;
-
-        // Check answers for each question
-        if (document.querySelector('input[name="q1"]:checked').value === 'c') {
-            score++;
+    function checkAnswer(element, questionId, correctAnswer) {
+        const resultElement = document.getElementById('result_' + questionId);
+        if (element.value === correctAnswer) {
+            resultElement.innerText = "Correct!";
+            resultElement.className = "correct";
+        } else {
+            resultElement.innerText = "Incorrect!";
+            resultElement.className = "incorrect";
         }
-        // Check other questions similarly...
-
-        if (document.querySelector('input[name="q10"]:checked').value === 'b') {
-            score++;
-        }
-
-        document.getElementById('result').innerText = "You scored " + score + "/10!";
     }
 </script>
 
