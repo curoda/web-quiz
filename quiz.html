@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revolutionary War Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Revolutionary War Quiz</h2>
+
+<form id="quizForm">
+    <div class="question">
+        <p>1. Who was the main author of the Declaration of Independence?</p>
+        <input type="radio" name="q1" value="a"> Benjamin Franklin<br>
+        <input type="radio" name="q1" value="b"> George Washington<br>
+        <input type="radio" name="q1" value="c"> Thomas Jefferson<br>
+        <input type="radio" name="q1" value="d"> John Adams<br>
+    </div>
+
+    <!-- Add more questions similarly... -->
+
+    <div class="question">
+        <p>10. Which battle is considered the turning point of the Revolutionary War?</p>
+        <input type="radio" name="q10" value="a"> Battle of Bunker Hill<br>
+        <input type="radio" name="q10" value="b"> Battle of Saratoga<br>
+        <input type="radio" name="q10" value="c"> Battle of Yorktown<br>
+        <input type="radio" name="q10" value="d"> Battle of Lexington and Concord<br>
+    </div>
+
+    <input type="button" value="Submit" onclick="checkAnswers()">
+</form>
+
+<p id="result"></p>
+
+<script>
+    function checkAnswers() {
+        let score = 0;
+
+        // Check answers for each question
+        if (document.querySelector('input[name="q1"]:checked').value === 'c') {
+            score++;
+        }
+        // Check other questions similarly...
+
+        if (document.querySelector('input[name="q10"]:checked').value === 'b') {
+            score++;
+        }
+
+        document.getElementById('result').innerText = "You scored " + score + "/10!";
+    }
+</script>
+
+</body>
+</html>
