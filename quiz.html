@@ -8,15 +8,58 @@
         body {
             font-family: Arial, sans-serif;
             margin: 50px;
+            background-color: #f9f9f9;
         }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
         .question {
-            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            transition: background-color 0.3s;
         }
+
+        .question:hover {
+            background-color: #f5f5f5;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[type="radio"] + label {
+            padding: 5px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: inline-block;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        input[type="radio"]:hover + label {
+            transform: scale(1.05);
+            background-color: #e6e6e6;
+        }
+
         .correct {
             color: green;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
         }
+
         .incorrect {
             color: red;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -26,10 +69,10 @@
 
 <div class="question">
     <p>1. Who was the main author of the Declaration of Independence?</p>
-    <input type="radio" name="q1" value="a" onclick="checkAnswer(this, 'q1', 'c')"> Benjamin Franklin<br>
-    <input type="radio" name="q1" value="b" onclick="checkAnswer(this, 'q1', 'c')"> George Washington<br>
-    <input type="radio" name="q1" value="c" onclick="checkAnswer(this, 'q1', 'c')"> Thomas Jefferson<br>
-    <input type="radio" name="q1" value="d" onclick="checkAnswer(this, 'q1', 'c')"> John Adams<br>
+    <input type="radio" name="q1" id="q1a" value="a" onclick="checkAnswer(this, 'q1', 'c')"><label for="q1a">Benjamin Franklin</label><br>
+    <input type="radio" name="q1" id="q1b" value="b" onclick="checkAnswer(this, 'q1', 'c')"><label for="q1b">George Washington</label><br>
+    <input type="radio" name="q1" id="q1c" value="c" onclick="checkAnswer(this, 'q1', 'c')"><label for="q1c">Thomas Jefferson</label><br>
+    <input type="radio" name="q1" id="q1d" value="d" onclick="checkAnswer(this, 'q1', 'c')"><label for="q1d">John Adams</label><br>
     <span id="result_q1"></span>
 </div>
 
